@@ -5,35 +5,36 @@ import { directorySites } from '../site-content';
 export default function DirectoryPage() {
   return (
     <SiteFrame current="directory">
-      <main className="subpage">
-        <section className="page-hero directory-hero">
-          <div>
-            <p className="kicker">Directory</p>
-            <h1>Other websites and project homes.</h1>
-          </div>
+      <main className="page">
+        <section className="page-header">
+          <p className="eyebrow">Directory</p>
+          <h1>Websites and project homes.</h1>
           <p>
-            A small index for the things I have built, the tools I am shaping,
-            and the work that is easiest to understand by opening it.
+            A simple index for the tools I have built, the places where they
+            live, and the code shelf behind the work.
           </p>
         </section>
 
-        <section className="directory-grid" aria-label="Website directory">
+        <section className="site-list" aria-label="Website directory">
           {directorySites.map((site) => {
             const Icon = site.icon;
             return (
-              <article className="directory-card" key={site.href}>
-                <img src={site.image} alt="" aria-hidden="true" />
-                <div>
-                  <span className="status-pill">{site.status}</span>
-                  <p>{site.label}</p>
-                  <h2>{site.name}</h2>
-                  <span>{site.description}</span>
-                  <a href={site.href}>
-                    <Icon aria-hidden="true" className="h-4 w-4" />
-                    Open
-                    <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
-                  </a>
+              <article className="site-row" key={site.href}>
+                <div className="site-row-icon">
+                  <Icon aria-hidden="true" className="h-5 w-5" />
                 </div>
+                <div className="site-row-main">
+                  <div className="site-row-title">
+                    <h2>{site.name}</h2>
+                    <span>{site.status}</span>
+                  </div>
+                  <p>{site.label}</p>
+                  <span>{site.description}</span>
+                </div>
+                <a href={site.href} target="_blank" rel="noreferrer">
+                  Open
+                  <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
+                </a>
               </article>
             );
           })}

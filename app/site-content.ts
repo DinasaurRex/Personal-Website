@@ -33,36 +33,14 @@ export const profileLinks = [
   icon: ComponentType<{ className?: string }>;
 }>;
 
-export const artImages = [
+export const quickLinks = [
   {
-    src: '/images/moon-clouds.png',
-    alt: 'Dreamy blue and purple clouds with glowing birds, stars, and a crescent moon.',
-    title: 'soft sky',
-    size: 'wide',
+    label: 'GitHub',
+    href: 'https://github.com/DinasaurRex',
   },
   {
-    src: '/images/coastal-road.png',
-    alt: 'Calm coastal road illustration with a yellow car by blue water.',
-    title: 'quiet motion',
-    size: 'wide',
-  },
-  {
-    src: '/images/pixel-shelter.png',
-    alt: 'Pixel-art shelter tucked in warm trees with a small cat resting in front.',
-    title: 'pixel shelter',
-    size: 'small',
-  },
-  {
-    src: '/images/pink-shop.png',
-    alt: 'Pixel-art storefront under a large pink flowering tree.',
-    title: 'warm storefront',
-    size: 'small',
-  },
-  {
-    src: '/images/dusk-town.png',
-    alt: 'Blue dusk town illustration with lit windows, mountains, and a crescent moon.',
-    title: 'blue hour',
-    size: 'wide',
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/dinasaab/',
   },
 ];
 
@@ -175,7 +153,6 @@ export const directorySites = [
     label: 'Student project platform',
     description:
       'A full-stack app that helps students find projects, competitions, teammates, and chances to build together.',
-    image: '/images/coastal-road.png',
     status: 'Live',
     icon: ExternalLink,
   },
@@ -185,8 +162,7 @@ export const directorySites = [
     label: 'Academic tracker',
     description:
       'A private-by-default tracker for assignments, grades, weekly schedules, notes, and service hours.',
-    image: '/images/dusk-town.png',
-    status: 'Private draft',
+    status: 'Live',
     icon: FileText,
   },
   {
@@ -195,7 +171,6 @@ export const directorySites = [
     label: 'Code shelf',
     description:
       'A growing collection of web, hardware, and learning projects as they move from experiments into finished builds.',
-    image: '/images/pink-shop.png',
     status: 'Ongoing',
     icon: Code2,
   },

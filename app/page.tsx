@@ -1,98 +1,118 @@
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Code2, Cpu, GraduationCap, Leaf } from 'lucide-react';
 import { SiteFrame } from './SiteFrame';
-import { artImages, featureProjects, profileLinks } from './site-content';
+
+const strengths = [
+  {
+    label: 'Embedded systems',
+    value: 'ESP32, Arduino, sensors, motor control',
+    icon: Cpu,
+  },
+  {
+    label: 'Web development',
+    value: 'Next.js, React, TypeScript, Supabase',
+    icon: Code2,
+  },
+  {
+    label: 'Engineering path',
+    value: 'McGill electrical engineering',
+    icon: GraduationCap,
+  },
+];
+
+const highlights = [
+  'Built a full-stack production website for MCommercial and increased traffic by 35%.',
+  'Designed Henry Jr., a four-wheel ESP32 remote-controlled companion robot.',
+  'Created a 1 x 3 m Arduino-powered self-sustainable garden.',
+  'Built BuildWith to help students find projects, competitions, and teammates.',
+];
 
 export default function Home() {
   return (
     <SiteFrame current="home">
-      <main>
-        <section className="hero">
-          <img
-            src="/images/moon-clouds.png"
-            alt=""
-            aria-hidden="true"
-            className="hero-art"
-            width="736"
-            height="414"
-          />
-          <div className="hero-shade" aria-hidden="true" />
-          <div className="hero-content">
-            <p className="kicker">Little Ray of Dina</p>
+      <main className="page">
+        <section className="home-hero">
+          <div className="hero-copy">
+            <p className="eyebrow">Little Ray of Dina</p>
             <h1>Dina Saab</h1>
-            <p className="hero-lead">
-              Electrical engineering student building warm, practical things at
-              the edge of hardware and software.
+            <p>
+              Electrical engineering student building practical tools across
+              hardware, embedded systems, and full-stack web development.
             </p>
-            <div className="hero-actions" aria-label="Primary links">
+            <div className="action-row">
               <a className="primary-action" href="/about">
-                About me
-                <ArrowRight aria-hidden="true" className="h-5 w-5" />
+                About
+                <ArrowRight aria-hidden="true" className="h-4 w-4" />
               </a>
               <a className="secondary-action" href="/resume">
                 Resume
               </a>
               <a className="secondary-action" href="/directory">
-                Websites
+                Directory
               </a>
             </div>
           </div>
-        </section>
 
-        <section className="intro-band" aria-label="Profile summary">
-          <div>
-            <Sparkles aria-hidden="true" className="h-5 w-5 text-[var(--sun)]" />
+          <aside className="focus-panel" aria-labelledby="current-focus">
+            <div className="panel-heading">
+              <Leaf aria-hidden="true" className="h-5 w-5" />
+              <h2 id="current-focus">Current Focus</h2>
+            </div>
             <p>
-              I like projects that become real in your hands: a robot that moves,
-              a garden that waters itself, a site that helps someone find their
-              next team.
+              Learning electrical engineering at McGill while turning ideas into
+              working systems: robots, automations, student platforms, and clear
+              tools people can actually use.
             </p>
-          </div>
-          <div className="profile-links">
-            {profileLinks.map((link) => {
-              const Icon = link.icon;
-              return (
-                <a key={link.href} href={link.href}>
-                  <Icon aria-hidden="true" className="h-4 w-4" />
-                  {link.label}
-                </a>
-              );
-            })}
-          </div>
+          </aside>
         </section>
 
-        <section className="section-wrap" aria-labelledby="selected-work">
-          <div className="section-heading">
-            <p className="kicker">Selected work</p>
-            <h2 id="selected-work">Hardware roots, software reach.</h2>
-          </div>
-          <div className="feature-grid">
-            {featureProjects.map((project) => {
-              const Icon = project.icon;
-              return (
-                <article className="project-card" key={project.name}>
-                  <Icon aria-hidden="true" className="h-6 w-6" />
-                  <p>{project.type}</p>
-                  <h3>{project.name}</h3>
-                  <span>{project.description}</span>
-                </article>
-              );
-            })}
-          </div>
+        <section className="strength-grid" aria-label="Core strengths">
+          {strengths.map((item) => {
+            const Icon = item.icon;
+            return (
+              <article className="metric-card" key={item.label}>
+                <Icon aria-hidden="true" className="h-5 w-5" />
+                <div>
+                  <h2>{item.label}</h2>
+                  <p>{item.value}</p>
+                </div>
+              </article>
+            );
+          })}
         </section>
 
-        <section className="art-gallery" aria-labelledby="visual-world">
-          <div className="section-heading">
-            <p className="kicker">Visual world</p>
-            <h2 id="visual-world">Calm pixels, blue hour, small sparks.</h2>
-          </div>
-          <div className="image-mosaic">
-            {artImages.map((image) => (
-              <figure className={`mosaic-item ${image.size}`} key={image.src}>
-                <img src={image.src} alt={image.alt} />
-                <figcaption>{image.title}</figcaption>
-              </figure>
-            ))}
-          </div>
+        <section className="content-grid">
+          <section className="content-panel" aria-labelledby="highlights">
+            <div className="section-heading">
+              <p className="eyebrow">Highlights</p>
+              <h2 id="highlights">What I have been building</h2>
+            </div>
+            <ul className="plain-list">
+              {highlights.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="content-panel" aria-labelledby="next-places">
+            <div className="section-heading">
+              <p className="eyebrow">Start here</p>
+              <h2 id="next-places">Useful places to open</h2>
+            </div>
+            <div className="link-list">
+              <a href="/about">
+                Learn about me
+                <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              </a>
+              <a href="/resume">
+                Read my resume
+                <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              </a>
+              <a href="/directory">
+                Visit my websites
+                <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              </a>
+            </div>
+          </section>
         </section>
       </main>
     </SiteFrame>

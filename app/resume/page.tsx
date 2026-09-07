@@ -5,14 +5,18 @@ import { resumeSections, skills } from '../site-content';
 export default function ResumePage() {
   return (
     <SiteFrame current="resume">
-      <main className="subpage">
-        <section className="page-hero resume-hero">
+      <main className="page">
+        <section className="page-header split-header">
           <div>
-            <p className="kicker">Resume</p>
+            <p className="eyebrow">Resume</p>
             <h1>Electrical engineering, web development, and embedded systems.</h1>
+            <p>
+              A readable overview of my education, technical experience, projects,
+              and skills.
+            </p>
           </div>
           <a className="primary-action" href="/resume/dina-saab-resume.pdf">
-            <Download aria-hidden="true" className="h-5 w-5" />
+            <Download aria-hidden="true" className="h-4 w-4" />
             Download PDF
           </a>
         </section>
@@ -22,8 +26,8 @@ export default function ResumePage() {
             {resumeSections.map((section) => {
               const Icon = section.icon;
               return (
-                <section className="resume-section" key={section.heading}>
-                  <div className="resume-section-title">
+                <section className="content-panel resume-section" key={section.heading}>
+                  <div className="panel-heading">
                     <Icon aria-hidden="true" className="h-5 w-5" />
                     <h2>{section.heading}</h2>
                   </div>
@@ -41,23 +45,18 @@ export default function ResumePage() {
               );
             })}
           </div>
-          <aside className="skills-panel">
-            <FileText aria-hidden="true" className="h-6 w-6 text-[var(--sun)]" />
-            <h2>Technical Skills</h2>
+
+          <aside className="content-panel skills-panel">
+            <div className="panel-heading">
+              <FileText aria-hidden="true" className="h-5 w-5" />
+              <h2>Skills</h2>
+            </div>
             <div className="skill-list">
               {skills.map((skill) => (
                 <span key={skill}>{skill}</span>
               ))}
             </div>
           </aside>
-        </section>
-
-        <section className="pdf-preview" aria-labelledby="resume-pdf">
-          <div className="section-heading">
-            <p className="kicker">Original</p>
-            <h2 id="resume-pdf">Resume PDF</h2>
-          </div>
-          <iframe title="Dina Saab resume PDF" src="/resume/dina-saab-resume.pdf" />
         </section>
       </main>
     </SiteFrame>
