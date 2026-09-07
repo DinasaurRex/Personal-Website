@@ -88,11 +88,11 @@
   --ink-soft: #68617a;
   --purple: #7661b8;
   --purple-soft: #eee8fb;
-  --cream: #fffaf4;
-  --page: #f3f0fa;
-  --line: #dfd8e8;
-  --shadow: #e4e7f6;
-  --accent-yellow: #ecb76a;
+  --cream: #fffaf7;
+  --page: #f4eef7;
+  --line: #ddd3e8;
+  --shadow: #eaddea;
+  --accent-yellow: #e9b76c;
   --accent-blue: #6fa7d5;
   --accent-pink: #e6a8bd;
 }
@@ -140,7 +140,7 @@ html {
 }
 
 body {
-  background: linear-gradient(180deg, #f6f3fd 0%, var(--page) 52%, #f7f1f7 100%);
+  background: var(--page);
   color: var(--ink);
   font-family: var(--font-body);
   letter-spacing: 0;
@@ -158,7 +158,7 @@ a {
 
 .site-header {
   align-items: center;
-  background: rgb(246 243 253 / 0.92);
+  background: rgb(244 238 247 / 0.94);
   border-bottom: 1px solid var(--line);
   display: grid;
   gap: 1rem;
@@ -178,9 +178,9 @@ a {
 
 .brand-mark {
   align-items: center;
-  background: var(--purple-soft);
-  border: 2px solid #cfc3ef;
-  box-shadow: 6px 6px 0 var(--shadow);
+  background: #f5effb;
+  border: 2px solid #d7c9ee;
+  box-shadow: 6px 6px 0 #eaddea;
   color: var(--ink);
   display: inline-flex;
   font-size: 1rem;
@@ -189,16 +189,6 @@ a {
   justify-content: center;
   position: relative;
   width: 2.8rem;
-}
-
-.brand-mark::after {
-  background: var(--accent-yellow);
-  content: '';
-  height: 0.45rem;
-  position: absolute;
-  right: 0.3rem;
-  top: 0.3rem;
-  width: 0.45rem;
 }
 
 .brand strong,
@@ -358,8 +348,8 @@ h1 {
 }
 
 .focus-panel {
-  background: #fff4df;
-  border: 1px solid rgb(236 183 106 / 0.38);
+  background: var(--cream);
+  border: 1px solid #ead8bb;
   padding: 1rem;
 }
 
@@ -541,8 +531,8 @@ h1 {
 
 .site-row-icon {
   align-items: center;
-  background: #fff4df;
-  border: 1px solid rgb(236 183 106 / 0.42);
+  background: var(--cream);
+  border: 1px solid #ead8bb;
   display: flex;
   height: 2.8rem;
   justify-content: center;
