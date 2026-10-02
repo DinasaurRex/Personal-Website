@@ -26,7 +26,9 @@ export function SiteFrame({
     <div className="site-shell">
       <header className="site-header">
         <a className="brand" href="/" aria-label="Dina Saab home">
-          <span className="brand-mark">D</span>
+          <span className="brand-mark" aria-hidden="true">
+            <img src="/brand/butterfly-logo.png" alt="" />
+          </span>
           <span>
             <strong>Dina Saab</strong>
             <small>Electrical engineering</small>

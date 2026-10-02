@@ -178,17 +178,22 @@ a {
 
 .brand-mark {
   align-items: center;
-  background: #f5effb;
-  border: 2px solid #d7c9ee;
-  box-shadow: 6px 6px 0 #eaddea;
-  color: var(--ink);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
   display: inline-flex;
-  font-size: 1rem;
-  font-weight: 900;
   height: 2.8rem;
   justify-content: center;
   position: relative;
   width: 2.8rem;
+}
+
+.brand-mark img {
+  display: block;
+  height: 2.5rem;
+  image-rendering: pixelated;
+  object-fit: contain;
+  width: 2.5rem;
 }
 
 .brand strong,
